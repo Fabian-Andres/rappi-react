@@ -1,0 +1,18 @@
+@import "../../../Assets/scss/components/_variables.scss";
+
+header {
+  height: 60px;
+  background-color: $white-bg;
+  border-bottom: 1px solid $light-black;
+  padding: 0 20px;
+  .logo-header {
+    width: 75px;
+  }
+  .navbar-light {
+    .navbar-nav {
+      .nav-link.active{
+        color: $primary-color;
+      }
+    }
+  }
+}
