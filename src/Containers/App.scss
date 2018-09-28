@@ -1,0 +1,368 @@
+
+$yellow: #f33959;
+$black-light: #1b1a20;
+
+body {
+    margin: 0;
+    color: $black-light;
+}
+
+
+main {
+    padding: 20px 2%;
+    max-width: 1200px;
+    margin: 20px auto 0 auto;
+}
+
+.clearfix {
+    clear: both;
+}
+
+/* MAC scrollbar para desktop*/
+@media screen and (min-width: 640px){
+    .float-cart__content::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 10px;
+        background-color: rgba(0,0,0,0.2);
+        padding: 10px;
+    }
+    .float-cart__content::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: #0c0b10;
+    }
+}
+
+.float-cart__content {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+
+.main-banner {
+    width: 100%;
+}
+
+.filters {
+    width: 15%;
+    float: left;
+
+    .star-button-container {
+      text-align: center;
+      small {
+        color: #aaa;
+        margin-bottom: 8px;
+        display: inline-block;
+      }
+
+    }
+
+    .title {
+        margin-top: 2px;
+        margin-bottom: 20px;
+    }
+
+    &-available-size {
+        display: inline-block;
+        margin-bottom: 10px;
+        /* Customize the label (the container) */
+        label {
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            font-size: 22px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            width: 35px;
+            height: 35px;
+            font-size: 0.8em;
+            margin-bottom: 8px;
+            margin-right: 8px;
+            border-radius: 50%;
+            line-height: 35px;
+            text-align: center;
+
+            /* On mouse-over, add a grey background color */
+            &:hover input ~ .checkmark {
+                border: 1px solid $black-light;
+            }
+
+            /* When the checkbox is checked, add a blue background */
+            & input:checked ~ .checkmark {
+                background-color: $black-light;
+                color: #ececec;
+            }
+
+            /* Show the checkmark when checked */
+            & input:checked ~ .checkmark:after {
+                display: block;
+            }
+
+            input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+            }
+
+            /* Create a custom checkbox */
+            .checkmark {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 35px;
+                height: 35px;
+                font-size: 0.8em;
+                border-radius: 50%;
+                line-height: 35px;
+                text-align: center;
+                color: $black-light;
+                background-color: #ececec;
+
+                border: 1px solid transparent;
+
+            }
+        }
+    }
+}
+
+.shelf-container {
+    width: 85%;
+    float: left;
+    min-height: 600px;
+
+    &-header {
+        margin-bottom: 10px;
+
+        .products-found {
+            float: left;
+            margin: 0;
+            margin-top: 8px;
+        }
+
+        .sort {
+            float: right;
+        }
+    }
+
+    .shelf-item {
+        float: left;
+        width: 25%;
+        position: relative;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 10px;
+        margin-bottom: 30px;
+        border: 1px solid transparent;
+
+        &:hover {
+            border: 1px solid #eee;
+
+            .btn {
+                background-color: $yellow;
+            }
+        }
+
+        .shelf-stopper {
+            position: absolute;
+            color: #ececec;
+            top: 10px;
+            right: 10px;
+            padding: 5px;
+            font-size: 0.6em;
+            background-color: $black-light;
+            cursor: default;
+        }
+
+        &__thumb {
+            height: 168px;
+            padding: 0 25px 20px;
+            margin-top: 20px;
+            overflow: hidden;
+            position: relative;
+            img {
+              width: auto;
+              max-height: 140px;
+              display: block;
+              margin: auto;
+              padding: 4px;
+              transition: .3s all ease;
+              position: absolute;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              top: 0;
+            }
+        }
+
+        &__title {
+          font-size: 14px;
+          text-align: left;
+          margin-bottom: 5px;
+          color: #333;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        &__price {
+            height: 60px;
+
+            .val {
+                b {
+                    font-size: 1.5em;
+                    margin-left: 5px;
+                }
+            }
+
+            .installment {
+                color: #9c9b9b;
+            }
+        }
+
+    }
+}
+
+
+@media only screen and (max-width : 1024px) {
+    .filters {
+        width: 20%;
+    }
+
+    .shelf-container {
+        width: 80%;
+
+        .shelf-item {
+            width: 33.33%;
+
+            &__title {
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width : 640px) {
+    .filters {
+        width: 25%;
+    }
+
+    .shelf-container {
+        width: 75%;
+
+        .shelf-item {
+            width: 50%;
+            padding: 10px;
+
+            &__title {
+                margin-top: 5px;
+                padding: 0;
+            }
+        }
+    }
+
+    .float-cart {
+        width: 100%;
+        right: -100%;
+
+        &--open {
+            right: 0;
+        }
+
+        &__close-btn {
+            left: 0px;
+            z-index: 2;
+            background-color: $black-light;
+        }
+
+        &__header {
+            padding: 25px 0;
+        }
+
+
+    }
+}
+
+@media only screen and (max-width : 460px) {
+    main {
+        padding: 2%;
+        margin-top: 75px;
+    }
+
+    .filters {
+        width: 100%;
+        text-align: center;
+
+        .title {
+            margin-bottom: 15px;
+        }
+    }
+
+    .shelf-container-header {
+        .products-found {
+            width: 100%;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .sort {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+
+    .shelf-container {
+        width: 100%;
+
+        .shelf-item {
+            width: 100%;
+        }
+    }
+}
+
+// Spinner
+.lds-ring {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -32px;
+  margin-top: -32px;
+  width: 64px;
+  height: 64px;
+  z-index: 10;
+  border-radius: 5px;
+  background-color: #000;
+
+  div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 51px;
+    height: 51px;
+    margin: 6px;
+    border: 6px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+    &:nth-child(1) {
+      animation-delay: -0.45s;
+    }
+    &:nth-child(2) {
+      animation-delay: -0.3s;
+    }
+    &:nth-child(3) {
+      animation-delay: -0.15s;
+    }
+  }
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

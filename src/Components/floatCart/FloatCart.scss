@@ -1,0 +1,225 @@
+@import "../../Assets/scss/components/_variables.scss";
+
+.float-cart {
+    position: fixed;
+    top: 0;
+    right: -450px;
+    width: 450px;
+    height: 100%;
+    background-color: $white-bg;
+    box-sizing: border-box;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,.15);
+    transition: right 0.2s;
+
+    &--open {
+        right: 0;
+    }
+
+    &__close-btn {
+        width: 50px;
+        height: 50px;
+        background-color: $light-black;
+        text-align: center;
+        line-height: 50px;
+        position: absolute;
+        top: 0;
+        left: -50px;
+        cursor: pointer;
+        transition: background-color 0.2s, opacity 0.2s;
+
+        i {
+          line-height: 50px;
+        }
+        &:hover {
+            background-color: $light-gray;
+        }
+    }
+
+    .bag {
+        width: 40px;
+        height: 40px;
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 25px;
+        background-image: url('./../../Assets/images/shopping-cart.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+
+        &--float-cart-closed {
+            position: absolute;
+            background-size: 50%;
+            left: -70px;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+
+            .bag__quantity {
+                top: 11px;
+                right: 7px;
+            }
+        }
+
+        &__quantity {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            color: $white-color;
+            font-weight: bold;
+            font-size: 0.7em;
+            text-align: center;
+            line-height: 18px;
+            border-radius: 50%;
+            background-color: $success-color;
+            position: absolute;
+            bottom: -5px;
+            right: 0px;
+        }
+    }
+
+    &__header {
+        box-sizing: border-box;
+        text-align: center;
+        padding: 20px 0 30px;
+
+        .header-title {
+            font-weight: bold;
+            font-size: 1.2em;
+            vertical-align: middle;
+            display: inline-block;
+            h3 {
+              line-height: 0.8em;
+              margin-bottom: 0;
+            }
+        }
+    }
+
+    &__shelf-container {
+        min-height: 280px;
+
+        .shelf-empty {
+            color: #ececec;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .shelf-item {
+            position: relative;
+            box-sizing: border-box;
+            padding: 5%;
+
+            transition: background-color 0.2s, opacity 0.2s;
+
+            &::before {
+                content: '';
+                width: 90%;
+                height: 2px;
+                background-color: $smoke-bg;
+                position: absolute;
+                top: 0;
+                left: 5%;
+            }
+
+            &--mouseover {
+                background: $smoke-bg;
+
+                .shelf-item__details {
+                    .title, .desc {
+                        text-decoration: line-through;
+                        opacity: 0.6;
+                    }
+                }
+
+                .shelf-item__price {
+                    text-decoration: line-through;
+                    opacity: 0.6;
+                }
+            }
+
+            &__del {
+                width: 16px;
+                height: 16px;
+                top: 15px;
+                right: 5%;
+                border-radius: 50%;
+                position: absolute;
+                z-index: 2;
+                cursor: pointer;
+
+
+                &:hover {
+                    background-position-x: -17px;
+                }
+            }
+
+            &__thumb, &__details, &__price {
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            &__thumb {
+                vertical-align: middle;
+                width: 15%;
+                margin-right: 3%;
+                position: relative;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    max-width: 40px;
+                    display: block;
+                    margin: auto;
+                }
+            }
+            &__details {
+                width: 57%;
+
+                .title {
+                    font-weight: bold;
+                    margin: 0;
+                }
+
+                .desc {
+                    color: #5b5a5e;
+                    margin: 0;
+                }
+            }
+            &__price {
+                color: $primary-color;
+                text-align: right;
+                width: 25%;
+            }
+        }
+    }
+
+    &__footer {
+        box-sizing: border-box;
+        padding: 5%;
+        border-top: 2px solid $smoke-bg;
+
+        .sub, .sub-price {
+            color: #5b5a5e;
+            vertical-align: middle;
+            display: inline-block;
+        }
+
+        .sub {
+            width: 20%;
+        }
+
+        .sub-price {
+            width: 80%;
+            text-align: right;
+
+            &__val, &__installment {
+                margin: 0;
+            }
+
+            &__val {
+                color: $primary-color;
+                font-size: 22px;
+            }
+        }
+    }
+}

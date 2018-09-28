@@ -69,46 +69,21 @@ h6, .h6{
 p{
     line-height: 1.61em;
     font-weight: 300;
-    font-size: 1.2em;
+    font-size: $font-size-large;
 }
 
 .title{
-    padding-top: 30px;
     position: relative;
     margin-bottom: $line-height;
     @media screen and (max-width: 991px) {
       font-size: $font-size-h3;
     }
-    &::after{
-      content: "";
-      border-bottom: $border $orange-bg;
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -0.7em;
-      margin: auto;
-      width: 64px;
-    }
 
-    &.title-up{
-        text-transform: uppercase;
-
-        a{
-            color: $black-color;
-            text-decoration: none;
-        }
-    }
-    & + .category{
-        margin-top: -25px;
-    }
 }
 
 .description,
 .card-description,
-.footer-big p{
-    color: $dark-gray;
-    font-weight: $font-weight-light;
-}
+
 .category{
     text-transform: capitalize;
     font-weight: $font-weight-bold;
@@ -131,45 +106,4 @@ p{
 }
 .text-black{
   color: $light-black;
-}
-
-.blockquote{
-    border-left: none;
-    border: 1px solid $default-color;
-    padding: 20px;
-    font-size: $font-size-blockquote;
-    line-height: 1.8;
-
-    small{
-        color: $default-color;
-        font-size: $font-size-small;
-        text-transform: uppercase;
-    }
-
-    &.blockquote-primary{
-        border-color: $primary-color;
-        color: $primary-color;
-
-        small{
-            color: $primary-color;
-        }
-    }
-
-    &.blockquote-danger{
-        border-color: $danger-color;
-        color: $danger-color;
-
-        small{
-            color: $danger-color;
-        }
-    }
-
-    &.blockquote-white{
-        border-color: $opacity-8;
-        color: $white-color;
-
-        small{
-            color: $opacity-8;
-        }
-    }
 }

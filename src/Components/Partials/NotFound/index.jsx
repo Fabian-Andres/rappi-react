@@ -1,9 +1,11 @@
-import React from 'react'
+// Dependences
+import React from 'react';
+import { Container } from 'reactstrap';
 
 const NotFound = ({ location }) => (
-  <div>
+  <Container>
     <h3>404 NotFound for <code>{location.pathname}</code></h3>
-  </div>
-)
+  </Container>
+);
 
-export default NotFound
+export default NotFound;

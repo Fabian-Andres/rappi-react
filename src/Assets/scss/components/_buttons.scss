@@ -6,7 +6,7 @@
     line-height: $line-height;
     margin: 10px 1px;
     border: none;
-    border-radius: $border-radius-extra-small;
+    border-radius: $border-radius-large;
     padding: $padding-btn-vertical $padding-btn-horizontal;
     cursor: pointer;
 
@@ -148,55 +148,4 @@
     top: 50%;
     margin-top: -1px;
     right: 8px;
-}
-
-.btn-facebook {
-  &,
-  &:hover,
-  &focus,
-  &:active,
-  &:active:focus {
-    color: $social-facebook !important;
-  }
-}
-
-.btn-twitter {
-
-  &,
-  &:hover,
-  &focus,
-  &:active,
-  &:active:focus {
-    color: $social-twitter !important;
-  }
-}
-
-.btn-google {
-  &,
-  &:hover,
-  &focus,
-  &:active,
-  &:active:focus {
-    color: $social-google !important;
-  }
-}
-
-.btn-github {
-  &,
-  &:hover,
-  &focus,
-  &:active,
-  &:active:focus {
-    color: $social-github !important;
-  }
-}
-
-.btn-linkedin {
-  &,
-  &:hover,
-  &focus,
-  &:active,
-  &:active:focus {
-    color: $social-linkedin !important;
-  }
 }

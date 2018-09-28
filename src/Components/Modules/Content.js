@@ -1,6 +1,9 @@
 // Dependencies
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Provider } from 'react-redux';
+
+import store from './../../store';
 
 class Content extends React.Component {
   static propTypes = {
@@ -11,9 +14,11 @@ class Content extends React.Component {
     const { body } = this.props;
 
     return(
-      <div className="Content">
-        {body}
-      </div>
+      <Provider store={store}>
+        <div className="Content">
+          {body}
+        </div>
+      </Provider>
     );
   }
 }

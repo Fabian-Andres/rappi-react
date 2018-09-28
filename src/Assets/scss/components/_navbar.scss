@@ -84,20 +84,9 @@
         }
     }
 
-    .logo-container{
-        width: 27px;
-        height: 27px;
-        overflow: hidden;
-        margin: 0 auto;
-        border-radius: 50%;
-        border: 1px solid transparent;
-    }
-
     .navbar-brand{
         text-transform: uppercase;
         font-size: $font-size-small;
-        padding-top: $padding-base-vertical;
-        padding-bottom: $padding-base-vertical;
         line-height: $line-height-nav-link;
     }
 
@@ -161,32 +150,4 @@
             border: 1px solid $default-color;
         }
     }
-}
-
-.bg-default{
-    background-color: $default-color !important;
-}
-
-.bg-primary{
-    background-color: $primary-color !important;
-}
-
-.bg-info{
-    background-color: $info-color !important;
-}
-
-.bg-success{
-    background-color: $success-color !important;
-}
-
-.bg-danger{
-    background-color: $danger-color !important;
-}
-
-.bg-warning{
-    background-color: $warning-color !important;
-}
-
-.bg-white{
-    background-color: $white-color !important;
 }
