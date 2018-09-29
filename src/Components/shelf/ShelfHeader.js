@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Sort from './Sort';
-import Clearfix from '../Clearfix';
+import Clearfix from '../Actions/Clearfix';
 
 
 const ShelfHeader = (props) => {

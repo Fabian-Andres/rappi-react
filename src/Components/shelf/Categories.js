@@ -5,52 +5,51 @@ import { connect } from "react-redux";
 
 import { updateFilters } from '../../store/actions/filterActions';
 
-import Checkbox from '../Checkbox';
+import Category from '../Actions/Category';
 
 const sublevel_id = [
-  'Bebidas',
-  'Gaseosas',
-  'Con azúcar',
-  'Sin azúcar',
-  'L',
-  'XL',
-  'XXL',
+  'Casual Shirts',
+  'Formal Shirts',
+  'Blazers',
+  'Polos',
 ];
 
 class Categories extends Component {
 
   componentWillMount() {
-    this.selectedCheckboxes = new Set();
+    this.selectedCategoryes = new Set();
   }
 
-  toggleCheckbox = (label) => {
-    if (this.selectedCheckboxes.has(label)) {
-      this.selectedCheckboxes.delete(label);
+  toggleCategory = (label) => {
+    if (this.selectedCategoryes.has(label)) {
+      this.selectedCategoryes.delete(label);
   } else {
-      this.selectedCheckboxes.add(label);
+      this.selectedCategoryes.add(label);
     }
 
-    this.props.updateFilters(Array.from(this.selectedCheckboxes));
+    this.props.updateFilters(Array.from(this.selectedCategoryes));
   }
 
-  createCheckbox = (label) => (
-    <Checkbox
-        classes="filters-available-size"
+  createCategory = (label) => (
+    <Category
+        classes="form-check"
         label={label}
-        handleCheckboxChange={this.toggleCheckbox}
+        handleCategoryChange={this.toggleCategory}
         key={label}
     />
   )
 
-  createCheckboxes = () => (
-    sublevel_id.map(this.createCheckbox)
+  createCategoryes = () => (
+    sublevel_id.map(this.createCategory)
   )
 
   render() {
     return (
       <div className="filters">
-        <h4 className="title">Sizes:</h4>
-        {this.createCheckboxes()}
+        <h4 className="title">Categories:</h4>
+        <div className="box-categories">
+          {this.createCategoryes()}
+        </div>
       </div>
     );
   }

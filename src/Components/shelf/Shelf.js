@@ -8,8 +8,8 @@ import { addProduct } from '../../store/actions/floatCartActions';
 import Product from './Product';
 import Categories from './Categories';
 import ShelfHeader from './ShelfHeader';
-import Clearfix from '../Clearfix';
-import Spinner from '../Spinner';
+import Clearfix from '../Actions/Clearfix';
+import Spinner from '../Actions/Spinner';
 
 
 class Shelf extends Component {

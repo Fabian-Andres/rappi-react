@@ -16,19 +16,19 @@
     }
 
     &__close-btn {
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
         background-color: $light-black;
         text-align: center;
-        line-height: 50px;
+        line-height: 60px;
         position: absolute;
         top: 0;
-        left: -50px;
+        left: -60px;
         cursor: pointer;
         transition: background-color 0.2s, opacity 0.2s;
 
         i {
-          line-height: 50px;
+          line-height: 60px;
         }
         &:hover {
             background-color: $light-gray;
@@ -99,9 +99,9 @@
         min-height: 280px;
 
         .shelf-empty {
-            color: #ececec;
             text-align: center;
             line-height: 40px;
+            padding: 7%;
         }
 
         .shelf-item {
@@ -177,7 +177,7 @@
 
                 .title {
                     font-weight: bold;
-                    margin: 0;
+                    margin: 0 0 12px;
                 }
 
                 .desc {
@@ -189,6 +189,7 @@
                 color: $primary-color;
                 text-align: right;
                 width: 25%;
+                margin-top: 10px;
             }
         }
     }
@@ -222,4 +223,33 @@
             }
         }
     }
+}
+
+@media screen and (max-width: 640px){
+  .float-cart {
+    right: -85%;
+    width: 85%;
+    &--open{
+      right: 0;
+    }
+  }
+}
+
+/* MAC scrollbar para desktop*/
+@media screen and (min-width: 640px){
+    .float-cart__content::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 10px;
+        background-color: $smoke-bg;
+        padding: 10px;
+    }
+    .float-cart__content::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: $dark-gray;
+    }
+}
+
+.float-cart__content {
+    height: 100%;
+    overflow-y: scroll;
 }

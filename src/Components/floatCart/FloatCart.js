@@ -78,17 +78,20 @@ class FloatCart extends Component {
   }
 
   proceedToCheckout = () => {
-    const { totalPrice, productQuantity, currencyFormat, currencyId } = this.props.cartTotals;
+    const { totalPrice, productQuantity, currencyId } = this.props.cartTotals;
 
     if (!productQuantity) {
       alert('Add some product in the bag!');
     }else {
-      alert(`Checkout - Subtotal: ${currencyFormat} ${util.formatPrice(totalPrice, currencyId)}`);
+      alert(`Checkout - Subtotal: $${util.formatPrice(totalPrice, currencyId)}`);
     }
   }
 
   render() {
     const { cartTotals, cartProducts, removeProduct } = this.props;
+    const currencyId = "COP";
+    const currencyFormat = "$";
+
 
     const products = cartProducts.map(p => {
       return (
@@ -144,9 +147,12 @@ class FloatCart extends Component {
           <div className="float-cart__shelf-container">
             {products}
             {!products.length && (
-              <p className="shelf-empty">
-                Add some product in the bag <br />:)
-              </p>
+              <div className="shelf-empty">
+                <h5>Add some product in the bag </h5>
+                <p>
+                  We invite you to return to our stores and add products to your basket
+                </p>
+              </div>
             )}
           </div>
 
@@ -154,12 +160,12 @@ class FloatCart extends Component {
             <div className="sub">SUBTOTAL</div>
             <div className="sub-price">
               <p className="sub-price__val">
-                {`${cartTotals.currencyFormat} ${util.formatPrice(cartTotals.totalPrice, cartTotals.currencyId)}`}
+                {`${currencyFormat} ${util.formatPrice(cartTotals.totalPrice, currencyId)}`}
               </p>
               <small className="sub-price__installment">
                 {!!cartTotals.installments && (
                   <span>
-                    {`OR UP TO ${cartTotals.installments} x ${cartTotals.currencyFormat} ${util.formatPrice(cartTotals.totalPrice / cartTotals.installments, cartTotals.currencyId)}`}
+                    {`OR UP TO ${cartTotals.installments} x ${currencyFormat} ${util.formatPrice(cartTotals.totalPrice / cartTotals.installments, currencyId)}`}
                   </span>
                 )}
               </small>

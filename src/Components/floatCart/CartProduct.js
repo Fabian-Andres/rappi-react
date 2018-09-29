@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
 
-import Thumb from "./../Thumb";
+import Thumb from "./../Actions/Thumb";
 
 import util from '../../util';
 
@@ -23,6 +23,7 @@ class CartProduct extends Component {
 
   render(){
     const { product, removeProduct } = this.props;
+    const currencyFormat = "$";
 
     const classes = ['shelf-item'];
 
@@ -48,13 +49,11 @@ class CartProduct extends Component {
         <div className="shelf-item__details">
           <p className="title">{product.name}</p>
           <p className="desc">
-            {/* ${/*product.sublevel_id[0]*/} | */}
-            {`${product.style}`} <br />
-            <small>Quantity: {product.quantity}</small>
+            Quantity: {product.quantity}
           </p>
         </div>
         <div className="shelf-item__price">
-          <p>{`${product.currencyFormat}  ${util.formatPrice(product.price)}`}</p>
+          <p>{`${currencyFormat}  ${util.formatPrice(product.price)}`}</p>
         </div>
 
         <div className="clearfix" />

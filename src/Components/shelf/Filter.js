@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 
 import { updateFilters } from '../../store/actions/filterActions';
 
-import Checkbox from '../Checkbox';
+import Checkbox from '../Actions/Checkbox';
 
 const availableSizes = [
   'XS',

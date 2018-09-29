@@ -18,13 +18,13 @@ export const updateCart = (cartProducts) => dispatch => {
     greater = p.installments > greater ? p.installments : greater;
     return greater;
   }, 0);
-  
+
 
   let cartTotals = {
     productQuantity,
     installments,
     totalPrice,
-    currencyId: 'USD',
+    currencyId: 'COP',
     currencyFormat: '$',
   }
 

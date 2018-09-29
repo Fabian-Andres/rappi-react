@@ -10,10 +10,6 @@ h1,h2,h3,h4,h5,h6{
     font-family: $releway-serif-family;
 }
 
-small{
-    font-size: 60%;
-}
-
 a{
     color: $primary-color;
     &:hover,
@@ -75,10 +71,6 @@ p{
 .title{
     position: relative;
     margin-bottom: $line-height;
-    @media screen and (max-width: 991px) {
-      font-size: $font-size-h3;
-    }
-
 }
 
 .description,

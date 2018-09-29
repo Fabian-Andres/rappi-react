@@ -2,18 +2,20 @@
 import React from 'react';
 import PropTypes from "prop-types";
 
-import Thumb from '../Thumb';
+import Thumb from '../Actions/Thumb';
 
 import util from '../../util';
 
 
 const Product = (props) => {
   const product = props.product;
+  const currencyId = "COP";
+  const currencyFormat = "$";
 
   // an input component can alter the amount in the future
   product.quantity = 1;
 
-  let formattedPrice = util.formatPrice(product.price, product.currencyId);
+  let formattedPrice = util.formatPrice(product.price, currencyId);
 
   let productInstallment;
 
@@ -22,7 +24,7 @@ const Product = (props) => {
 
     productInstallment = (
       <div className="installment">
-        <span>or {product.installments} x</span><b> {product.currencyFormat} {util.formatPrice(installmentPrice, product.currencyId)}</b>
+        <span>or {product.installments} x</span><b> {currencyFormat} {util.formatPrice(installmentPrice, currencyId)}</b>
       </div>
     );
   }
@@ -40,7 +42,7 @@ const Product = (props) => {
       <div className="pr-2 pl-2">
         <p className="shelf-item__title">{product.name}</p>
         <div className="shelf-item__price">
-          <div className="val"><small>{product.currencyFormat}</small>
+          <div className="val"><small>{currencyFormat}</small>
             <b>
               {formattedPrice.substr(0, formattedPrice.length - 3)}
             </b>
@@ -50,7 +52,11 @@ const Product = (props) => {
           </div>
           {productInstallment}
         </div>
-        <div onClick={() => props.addProduct(product)} className="btn btn-success btn-block">Add to cart</div>
+        {product.available ? (
+          <div onClick={() => props.addProduct(product)} className="btn btn-success btn-block">Add to cart</div>
+        ) : (
+          <div className="btn disabled btn-block">Add to cart</div>
+        )}
       </div>
     </div>
   );

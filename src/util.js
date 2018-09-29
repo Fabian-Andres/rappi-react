@@ -1,9 +1,9 @@
 const formatPrice = (x, currency) => {
   switch(currency) {
-  case 'BRL':
-    return x.toFixed(2).replace('.', ',');
+  case 'COP':
+    return x.toFixed(3).replace(',', '.');
   default:
-    return x.toFixed(2);
+    return x.toFixed(3);
   }
 };
 

@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 
 import { updateSort } from '../../store/actions/sortActions';
 
-import Selectbox from '../Selectbox';
+import Selectbox from '../Actions/Selectbox';
 
 const sortBy = [
   { value: '',           label: 'Order by'  },

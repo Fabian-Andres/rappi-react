@@ -2,8 +2,7 @@ import { FETCH_PRODUCTS } from './types';
 import axios from 'axios';
 
 
-const productsAPI = 'https://api.myjson.com/bins/zos14';
-// const productsAPI = 'https://api.myjson.com/bins/zqx6w';
+const productsAPI = 'https://api.myjson.com/bins/gxfj4';
 
 
 const compare = {
