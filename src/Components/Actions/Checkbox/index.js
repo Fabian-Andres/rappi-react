@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 
 class Checkbox extends Component {
-  
+
   state = {
     isChecked: false,
   }
@@ -17,7 +17,7 @@ class Checkbox extends Component {
       }
     ));
 
-    handleCheckboxChange(label);
+    handleCheckboxChange(label); 
   }
 
   render() {
